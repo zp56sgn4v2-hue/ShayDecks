@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShayDex</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:linear-gradient(180deg,#6d28d9,#4c1d95);padding:20px}
+h1{text-align:center;color:white;margin-bottom:25px;font-size:2.5rem}
+.dex{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1400px;margin:auto}
+.card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;overflow:hidden}
+.card img{width:100%;height:350px;object-fit:cover;display:block}
+.info{padding:18px}
+.name{color:white;font-size:1.6rem;font-weight:bold;margin-bottom:10px}
+.rarity{display:inline-block;padding:8px 14px;border-radius:999px;font-weight:bold;color:black}
+.basic{background:#d1d5db}
+.rare{background:#facc15}
+.secret{background:#fb7185}
+.legendary{background:#22c55e}
+</style>
+</head>
+<body>
+<h1>✨ ShayDex ✨</h1>
+<div class="dex">
+<div class="card"><img src="card_1.jpeg"><div class="info"><div class="name">Princess Shaylen</div><span class="rarity secret">Secret Rare</span></div></div>
+<div class="card"><img src="card_2.jpeg"><div class="info"><div class="name">Pickle Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_3.jpeg"><div class="info"><div class="name">Dragon Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_4.jpeg"><div class="info"><div class="name">Cheesin' Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_5.jpeg"><div class="info"><div class="name">Panda Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_6.jpeg"><div class="info"><div class="name">Sandy Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_7.jpeg"><div class="info"><div class="name">Shopper Shaylen</div><span class="rarity basic">Basic</span></div></div>
+<div class="card"><img src="card_8.jpeg"><div class="info"><div class="name">Beaver Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_9.jpeg"><div class="info"><div class="name">Silly Shaylen</div><span class="rarity basic">Basic</span></div></div>
+<div class="card"><img src="card_10.jpeg"><div class="info"><div class="name">Shuggie</div><span class="rarity legendary">Legendary</span></div></div>
+</div>
+</body>
+</html>
