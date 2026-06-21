@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShayDex V2</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(180deg,#6d28d9,#4c1d95);
+padding:20px;color:white;
+}
+h1{text-align:center;font-size:3rem;margin-bottom:10px}
+.counter{text-align:center;margin-bottom:20px;opacity:.9}
+#searchBox{
+display:block;width:90%;max-width:500px;margin:20px auto;
+padding:12px;border:none;border-radius:999px;font-size:16px;
+}
+.dex{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:24px;max-width:1400px;margin:auto;
+}
+.card{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:20px;
+overflow:hidden;
+backdrop-filter:blur(10px);
+transition:.2s;
+}
+.card:hover{transform:translateY(-4px)}
+.card img{
+width:100%;
+height:auto;
+display:block;
+cursor:pointer;
+}
+.info{padding:18px}
+.name{font-size:1.4rem;font-weight:bold;margin-bottom:10px}
+.rarity{
+display:inline-block;padding:8px 14px;border-radius:999px;
+font-weight:bold;color:black;
+}
+.basic{background:#d1d5db}
+.rare{background:#60a5fa}
+.secret{background:#facc15;box-shadow:0 0 20px gold}
+.legendary{background:#ef4444;box-shadow:0 0 25px #ef4444}
+
+.modal{
+display:none;position:fixed;inset:0;
+background:rgba(0,0,0,.95);
+justify-content:center;align-items:center;
+z-index:1000;
+}
+.modal img{max-width:95vw;max-height:95vh}
+</style>
+</head>
+<body>
+
+<h1>✨ ShayDex V2 ✨</h1>
+<p class="counter">10 Cards Collected</p>
+
+<input type="text" id="searchBox" placeholder="Search cards..." onkeyup="searchCards()">
+
+<div class="dex">
+
+<div class="card"><img src="card_1.jpeg"><div class="info"><div class="name">#001 Princess Shaylen</div><span class="rarity secret">Secret Rare</span></div></div>
+<div class="card"><img src="card_2.jpeg"><div class="info"><div class="name">#002 Pickle Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_3.jpeg"><div class="info"><div class="name">#003 Dragon Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_4.jpeg"><div class="info"><div class="name">#004 Cheesin' Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_5.jpeg"><div class="info"><div class="name">#005 Panda Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_6.jpeg"><div class="info"><div class="name">#006 Sandy Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_7.jpeg"><div class="info"><div class="name">#007 Shopper Shaylen</div><span class="rarity basic">Basic</span></div></div>
+<div class="card"><img src="card_8.jpeg"><div class="info"><div class="name">#008 Beaver Shaylen</div><span class="rarity rare">Rare</span></div></div>
+<div class="card"><img src="card_9.jpeg"><div class="info"><div class="name">#009 Silly Shaylen</div><span class="rarity basic">Basic</span></div></div>
+<div class="card"><img src="card_10.jpeg"><div class="info"><div class="name">#010 Shuggie</div><span class="rarity legendary">Legendary</span></div></div>
+
+</div>
+
+<div class="modal" id="modal"><img id="modalImg"></div>
+
+<script>
+function searchCards(){
+ let input=document.getElementById("searchBox").value.toLowerCase();
+ document.querySelectorAll(".card").forEach(card=>{
+   let name=card.querySelector(".name").innerText.toLowerCase();
+   card.style.display=name.includes(input)?"":"none";
+ });
+}
+
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modalImg");
+
+document.querySelectorAll(".card img").forEach(img=>{
+ img.onclick=()=>{
+   modal.style.display="flex";
+   modalImg.src=img.src;
+ };
+});
+
+modal.onclick=()=>modal.style.display="none";
+</script>
+
+</body>
+</html>
